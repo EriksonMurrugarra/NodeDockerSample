@@ -3,9 +3,9 @@ FROM node:6.9
 WORKDIR /app
 COPY package.json /app
 
-ENV http_proxy http://murruer:rusia2018.@tpaproxy.verizon.com:5150
-ENV https_proxy http://murruer:rusia2018.@tpaproxy.verizon.com:5150
-ENV no_proxy onestash.verizon.com
+ENV http_proxy <PROXY_HERE>
+ENV https_proxy <PROXY_HERE>
+ENV no_proxy <DOMAIN_HERE>
 
 RUN npm install
 
