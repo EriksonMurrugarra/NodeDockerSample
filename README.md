@@ -55,6 +55,19 @@ Ejemplo de una aplicacion en NodeJS sencilla con su respectivo Dockerfile para c
 #### Get Service
 > kubectl get service
 
+#### Delete a pod
+> kubectl delete pod <pod>
+
+#### Scale a pod 1st way
+> kubectl scale --replicas=<replicas> -f <file-to-controller.yml>
+
+#### Scale a pod 2nd way
+> kubectl scale --replicas=<replicas> rc/<controller-name>
+
+#### Get replicas list
+> kubectl get rc
+
+
 
 ## Minikube
 
