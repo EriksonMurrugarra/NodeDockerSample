@@ -34,11 +34,10 @@ Ejemplo de una aplicacion en NodeJS sencilla con su respectivo Dockerfile para c
 > kubectl describe pod <pod>
 
 #### Expose the port of a pod(Creates a new service)
-> kubectl expose pod <pod> --port=PORT --name=NAME
 > kubectl expose pod <pod> --type=NodePort --name=NAME
 
 #### Port forward the exposed pod port to local machine
-> kubectl port-forward <pod> 8080
+> kubectl port-forward <pod> 8080:<podport>
 
 #### Attach to the pod
 > kubectl attach <pod> -i
@@ -83,6 +82,27 @@ Ejemplo de una aplicacion en NodeJS sencilla con su respectivo Dockerfile para c
 
 > minikube service <service> --url
  
+
+## Deployments
+
+### get deployment status
+> kubectl rollout status deployment/<deploy>
+
+### change image version
+> kubectl set image <dep> image=newimage
+
+### Edit deployment object
+> kubectl edit <dep>
+
+### Get the rollout history
+> kubectl rollout history <dep>
+
+### Rollout to preivous version
+> kubectl rollout undo <dep>
+
+### Rollout to any version
+> kubectl rollout undo <dep> --to-version=<n>
+
 
 
 
