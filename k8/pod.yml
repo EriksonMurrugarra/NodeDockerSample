@@ -9,4 +9,5 @@ spec:
   - name: helloserver-container
     image: eriksonmurrugarra/hello-server
     ports:
-    - containerPort: 3000
+    - name: nodejs-port
+      containerPort: 3000
