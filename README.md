@@ -128,5 +128,11 @@ nodeSelector:
 > kubectl get nodes --show-labels
 
 
+## Secrets
+
+### Create a secret from a file
+> kubectl create secret generic db-user-pass --from-file=<file>
+
+### Secrets using yaml
 
 

@@ -1,13 +1,24 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nodehelloserverapp.eriksonmurrugarra.com
+  name: hello.app
   labels:
     app: helloserver
 spec:
   containers:
   - name: helloserver-container
-    image: eriksonmurrugarra/hello-server
+    image: eriksonmurrugarra/hello-server:3
     ports:
     - name: nodejs-port
       containerPort: 3000
+    env:
+    - name: SECRET_USERNAME
+      valueFrom:
+        secretKeyRef:
+          name: db-secret
+          key: username
+    - name: SECRET_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: db-secret
+          key: password
