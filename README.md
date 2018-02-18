@@ -89,7 +89,7 @@ Ejemplo de una aplicacion en NodeJS sencilla con su respectivo Dockerfile para c
 > kubectl rollout status deployment/<deploy>
 
 ### change image version
-> kubectl set image <dep> image=newimage
+> kubectl set image <dep> <container>=<newimage>
 
 ### Edit deployment object
 > kubectl edit <dep>
@@ -97,12 +97,35 @@ Ejemplo de una aplicacion en NodeJS sencilla con su respectivo Dockerfile para c
 ### Get the rollout history
 > kubectl rollout history <dep>
 
+#### increment the history
+> kubect edit <dep>
+
+below replicas:3
+revisionHistoryLimit:100
+
+
+
 ### Rollout to preivous version
 > kubectl rollout undo <dep>
 
 ### Rollout to any version
-> kubectl rollout undo <dep> --to-version=<n>
+> kubectl rollout undo <dep> --to-revision=<n>
 
+
+
+## Labels
+
+### Add a label or multiple labels to nodes:
+> kubectl label nodes <node> <label-key>=<value>
+
+### Add nodeSelector to Pod definition
+```
+...
+nodeSelector:
+    <label-key>: <value>
+```
+### Get nodes w ith labels
+> kubectl get nodes --show-labels
 
 
 
