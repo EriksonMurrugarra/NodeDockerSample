@@ -45,6 +45,9 @@ Ejemplo de una aplicacion en NodeJS sencilla con su respectivo Dockerfile para c
 #### Execute a command on the pod (use -c to refer to a specific container)
 > kubectl exec <pod> -- command
 
+#### Access to terminal
+> kubectl exec <pod> -i -t -- /bin/bash
+
 #### Add a new label to a pod
 > kubectl label pods <pod> mylabel=myvalue
 
