@@ -138,4 +138,40 @@ nodeSelector:
 
 ### Secrets using yaml
 
+## ConfigMap
 
+### Create a config Map
+> kubectl create configmap app-config --from-file=<path-to-file>
+
+### Get ConfigMap
+> kubectl get configmap <name> -o yaml
+
+### LOGIN INTO COTAINER
+> kubectl exec -i -t <pod> -c <container> -- <bash>
+
+
+## Ingres
+### Calling curl with host
+> curl <host> -H 'Host: version1.example.cpm'
+
+## Node
+### kill node
+> kubectl drain <node> --force
+
+### Horizontal pod autoescaler
+> kubect get hpa 
+
+### curl service from pod
+> curl http://<service>.<namespace>.svc.cluster.local:<PORT>
+
+## Namespaces
+### Create a new ns
+> kubectl create namespace <space-name>
+
+### List nss
+> kubectl get namespaces
+
+## Config
+### To change context
+> kubectl config view
+> kubectl config set-context <context> --namespace=<namespace>

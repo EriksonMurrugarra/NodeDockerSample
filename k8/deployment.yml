@@ -1,17 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: helloserver-deployment
+  name: hello-deployment-2
 spec:
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
-        app: hello-server
+        app: hello-2
     spec:
       containers:
       - name: hello-container
-        image: eriksonmurrugarra/hello-server
+        image: eriksonmurrugarra/hello-server:2
         ports:
         - name: nodejs-port
           containerPort: 3000
