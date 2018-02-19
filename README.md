@@ -175,3 +175,25 @@ nodeSelector:
 ### To change context
 > kubectl config view
 > kubectl config set-context <context> --namespace=<namespace>
+
+## Quotas
+### To specify them
+```
+....
+    ports:
+        ...
+    resources:
+        requests:
+            cpu: 200m
+            memory: 0.5Gi
+        limits:
+            cpu: 400m
+            memory: 1Gi
+
+```
+
+### To list quotas
+> kubectl get quota
+
+### to describe
+> kubectl describe quota <quota>
