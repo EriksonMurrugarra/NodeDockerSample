@@ -197,3 +197,7 @@ nodeSelector:
 
 ### to describe
 > kubectl describe quota <quota>
+
+## Minikube Advance
+### SSH into it 
+> minikube ssh
